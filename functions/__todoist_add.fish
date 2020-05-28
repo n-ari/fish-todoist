@@ -11,7 +11,7 @@ function __todoist_add
   set cmd "$cmd""\"$task\" "
 
   # read priority
-  seq 4 | fzf --reverse --header='AddTask:Priority' | read -l priority
+  seq 4 -1 1 | fzf --reverse --header='AddTask:Priority' | read -l priority
   if not test -z $priority
     set cmd "$cmd""--priority $priority "
   end
